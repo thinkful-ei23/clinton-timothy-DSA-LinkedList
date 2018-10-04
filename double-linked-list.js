@@ -130,6 +130,21 @@ class DoubleLinkedList {
   }
 }
 
+function reverseList(list) {
+  let currNode = list.head;
+  let prevNode = list.prev;
+  let nextNode = list.head.next;
+  while (currNode) {
+    nextNode = currNode.next;
+    prevNode = currNode.prev;
+    currNode.next = prevNode;
+    currNode.prev = nextNode;
+    currNode = nextNode;
+  }
+  list.head = prevNode.prev;
+  return list;
+}
+
 function mainDLL() {
   const DLL = new DoubleLinkedList();
   DLL.insertFirst('Aquaria');
@@ -137,9 +152,10 @@ function mainDLL() {
   DLL.insertBefore('Gemenon', 'Caprica');
   DLL.insertAfter('Gemenon', 'Picon');
   DLL.insertAt('Sagittaron', 2);
-  DLL.remove('Sagittaron');
-  console.log(DLL.find('Caprica'));
+  // DLL.remove('Sagittaron');
+  // console.log(DLL.find('Caprica'));
   console.log(DLL.display());
+  console.log(reverseList(DLL).display());
 }
 
 mainDLL();
