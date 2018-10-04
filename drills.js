@@ -1,7 +1,16 @@
 'use strict';
 
 const LinkedList = require('./linked-list');
-const { display, size, isEmpty, findPrevious, findLast, WhatDoesThisProgramDo } = require('./link-list-functions');
+const {
+  display,
+  size,
+  isEmpty,
+  findPrevious,
+  findLast,
+  WhatDoesThisProgramDo
+} = require('./link-list-functions');
+
+const { reverseList } = require('./interview');
 
 function main() {
   const SLL = new LinkedList();
@@ -39,7 +48,8 @@ function main() {
   // for (let i = 0; i < items.length; i++) {
   //   listWithDupes.insertLast(dupeItems[i]);
   // }
-  // display(listWithDupes);
+  display(reverseList(SLL));
+  console.log(SLL.head);
   // WhatDoesThisProgramDo(listWithDupes);
   // display(listWithDupes);
 }
