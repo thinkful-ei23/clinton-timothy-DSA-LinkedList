@@ -87,6 +87,38 @@ class DoubleLinkedList {
     currNode.prev = prevNode.next;
   }
 
+  find(item) {
+    if (!this.head) {
+      return null;
+    }
+    let currNode = this.head;
+    while (currNode.value !== item) {
+      if (currNode.next === null) {
+        return null;
+      }
+      else {
+        currNode = currNode.next;
+      }
+    }
+    return currNode;
+  }
+
+  remove(item) {
+    if (!this.head) {
+      return null;
+    }
+    if (this.head.value === item) {
+      this.head = this.head.next;
+      this.head.prev = null;
+      return;
+    }
+    let delNode = this.find(item);
+    let prevNode = delNode.prev;
+    let nextNode = delNode.next;
+    prevNode.next = nextNode;
+    nextNode.prev = prevNode;
+  }
+
   display(){
     let currNode = this.head;
     let result = [];
@@ -105,7 +137,8 @@ function mainDLL() {
   DLL.insertBefore('Gemenon', 'Caprica');
   DLL.insertAfter('Gemenon', 'Picon');
   DLL.insertAt('Sagittaron', 2);
-  // console.log(DLL);
+  DLL.remove('Sagittaron');
+  console.log(DLL.find('Caprica'));
   console.log(DLL.display());
 }
 
