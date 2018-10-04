@@ -10,7 +10,7 @@ const {
   WhatDoesThisProgramDo
 } = require('./link-list-functions');
 
-const { reverseList } = require('./interview');
+const { reverseList, getThirdFromEnd } = require('./interview');
 
 function main() {
   const SLL = new LinkedList();
@@ -31,6 +31,7 @@ function main() {
   SLL.insertAt('Kat', 3);
 
   SLL.remove('Tauhida');
+
   // console.log(JSON.stringify(SLL));
   // display(SLL);
   // console.log(size(SLL));
@@ -48,10 +49,13 @@ function main() {
   // for (let i = 0; i < items.length; i++) {
   //   listWithDupes.insertLast(dupeItems[i]);
   // }
-  display(reverseList(SLL));
-  console.log(SLL.head);
   // WhatDoesThisProgramDo(listWithDupes);
   // display(listWithDupes);
+  // display(reverseList(SLL));
+  // console.log(SLL.head);
+
+  display(SLL);
+  console.log(getThirdFromEnd(SLL));
 }
 
 main();
