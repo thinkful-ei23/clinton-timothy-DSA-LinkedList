@@ -1,7 +1,7 @@
 'use strict';
 
 const LinkedList = require('./linked-list');
-const { display, size, isEmpty, findPrevious, findLast } = require('./link-list-functions');
+const { display, size, isEmpty, findPrevious, findLast, WhatDoesThisProgramDo } = require('./link-list-functions');
 
 function main() {
   const SLL = new LinkedList();
@@ -23,15 +23,25 @@ function main() {
 
   SLL.remove('Tauhida');
   // console.log(JSON.stringify(SLL));
-  display(SLL);
+  // display(SLL);
   // console.log(size(SLL));
   // console.log(isEmpty(SLL));
   // console.log(isEmpty(emptyList));
   // console.log(findPrevious(SLL, 'squirrel'));
   // console.log(findPrevious(SLL, 'Apollo'));
   // console.log(findPrevious(emptyList, 'Apollo'));
-  console.log(findLast(SLL));
-  console.log(findLast(emptyList));
+  // console.log(findLast(SLL));
+  // console.log(findLast(emptyList));
+
+  // const listWithDupes = new LinkedList();
+  // const dupeItems = ['Apollo', 'Boomer', 'Apollo', 'Husker', 'squirrel', 'squirrel'];
+
+  // for (let i = 0; i < items.length; i++) {
+  //   listWithDupes.insertLast(dupeItems[i]);
+  // }
+  // display(listWithDupes);
+  // WhatDoesThisProgramDo(listWithDupes);
+  // display(listWithDupes);
 }
 
 main();

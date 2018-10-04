@@ -57,10 +57,27 @@ function findLast(list) {
   return currentNode;
 }
 
+function WhatDoesThisProgramDo(lst){
+  let current = lst.head;
+  while(current !== null){
+    let newNode = current;
+    while (newNode.next !== null) {
+      if (newNode.next.value === current.value) {
+        newNode.next = newNode.next.next;
+      }
+      else{
+        newNode = newNode.next;
+      }
+    }
+    current = current.next;
+  }
+}
+
 module.exports = {
   display,
   size,
   isEmpty,
   findPrevious,
-  findLast
+  findLast,
+  WhatDoesThisProgramDo
 };
