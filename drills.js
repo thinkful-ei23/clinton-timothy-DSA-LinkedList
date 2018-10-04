@@ -1,7 +1,7 @@
 'use strict';
 
 const LinkedList = require('./linked-list');
-const { display } = require('./link-list-functions');
+const { display, size } = require('./link-list-functions');
 
 function main() {
   const SLL = new LinkedList();
@@ -22,6 +22,7 @@ function main() {
 
   SLL.remove('Tauhida');
   display(SLL);
+  console.log(size(SLL));
   // console.log(JSON.stringify(SLL));
 }
 

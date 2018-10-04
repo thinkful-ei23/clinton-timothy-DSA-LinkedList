@@ -14,6 +14,20 @@ function display(list) {
   return listDisplay;
 }
 
+const size = list => {
+  let listSize = 0;
+  if (!list.head) {
+    return listSize;
+  }
+  let currNode = list.head;
+  while (currNode) {
+    listSize++;
+    currNode = currNode.next;
+  }
+  return listSize;
+};
+
 module.exports = {
-  display
+  display,
+  size
 };
