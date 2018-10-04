@@ -73,6 +73,19 @@ class LinkedList {
     }
   }
 
+  insertCycle(item) {
+    if (this.head === null) {
+      this.insertFirst(item);
+    } else {
+      let tempNode = this.head;
+      while (tempNode.next !== null) {
+        tempNode = tempNode.next;
+      }
+      tempNode.next = new _Node(item, this.head);
+    }
+
+  }
+
   find(item) { 
     //start at the head
     let currNode = this.head;

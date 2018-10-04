@@ -10,28 +10,28 @@ const {
   WhatDoesThisProgramDo
 } = require('./link-list-functions');
 
-const { reverseList, getThirdFromEnd, middleOfList } = require('./interview');
+const { reverseList, getThirdFromEnd, middleOfList, checkCycle } = require('./interview');
 
 function main() {
   const SLL = new LinkedList();
   const emptyList = new LinkedList();
-
+  
   const items = ['Apollo', 'Boomer', 'Helo', 'Husker', 'Starbuck', 'squirrel'];
-
+  
   for (let i = 0; i < items.length; i++) {
     SLL.insertLast(items[i]);
   }
-
+  
   SLL.insertLast('Tauhida');
-
+  
   SLL.insertBefore('Athena', 'Boomer');
-
+  
   SLL.insertAfter('Hotdog', 'Helo');
-
+  
   SLL.insertAt('Kat', 3);
-
+  
   SLL.remove('Tauhida');
-
+  
   // console.log(JSON.stringify(SLL));
   // display(SLL);
   // console.log(size(SLL));
@@ -54,9 +54,18 @@ function main() {
   // display(reverseList(SLL));
   // console.log(SLL.head);
 
-  display(SLL);
+  // display(SLL);
   // console.log(getThirdFromEnd(SLL));
-  console.log(middleOfList(SLL));
+  // console.log(middleOfList(SLL));
+
+  const CycleList = new LinkedList();
+  for (let i = 0; i < items.length; i++) {
+    CycleList.insertLast(items[i]);
+  }
+  CycleList.insertCycle('cycler');
+  
+  console.log(checkCycle(SLL));
+  console.log(checkCycle(CycleList));
 }
 
 main();

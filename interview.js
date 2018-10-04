@@ -39,4 +39,16 @@ function middleOfList(list) {
   }
   return currNode;
 }
-module.exports = { reverseList, getThirdFromEnd, middleOfList };
+function checkCycle(list) {
+  let currNode = list.head.next;
+  let tempNode = list.head;
+  while (currNode !== null) {
+    if (currNode === tempNode) {
+      return true;
+    } else {
+      currNode = currNode.next;
+    }
+  }
+  return false;
+}
+module.exports = { reverseList, getThirdFromEnd, middleOfList, checkCycle };
