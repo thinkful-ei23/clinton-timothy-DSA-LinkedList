@@ -1,3 +1,5 @@
+'use strict';
+
 function display(list) {
   const listDisplay = {};
   let currNode = list.head;
@@ -27,7 +29,38 @@ const size = list => {
   return listSize;
 };
 
+function isEmpty(list) {
+  return !list.head;
+}
+
+function findPrevious(list, item) {
+  if (!list.head || list.head.value === item) {
+    return null;
+  }
+  let prevNode = null;
+  let currentNode = list.head;
+  while (currentNode.value !== item) {
+    prevNode = currentNode;
+    currentNode = currentNode.next;
+  }
+  return prevNode;
+}
+
+function findLast(list) {
+  if (!list.head) {
+    return null;
+  }
+  let currentNode = list.head;
+  while (currentNode.next !== null) {
+    currentNode = currentNode.next;
+  }
+  return currentNode;
+}
+
 module.exports = {
   display,
-  size
+  size,
+  isEmpty,
+  findPrevious,
+  findLast
 };
