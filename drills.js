@@ -10,7 +10,7 @@ const {
   WhatDoesThisProgramDo
 } = require('./link-list-functions');
 
-const { reverseList, getThirdFromEnd } = require('./interview');
+const { reverseList, getThirdFromEnd, middleOfList } = require('./interview');
 
 function main() {
   const SLL = new LinkedList();
@@ -55,7 +55,8 @@ function main() {
   // console.log(SLL.head);
 
   display(SLL);
-  console.log(getThirdFromEnd(SLL));
+  // console.log(getThirdFromEnd(SLL));
+  console.log(middleOfList(SLL));
 }
 
 main();
